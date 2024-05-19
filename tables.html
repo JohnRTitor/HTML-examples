@@ -1,27 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <table>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <table>
+        <thead>
             <tr>
+                <th>Student ID</th>
                 <th>Name</th>
-                <th>Science</th>
-                <th>Maths</th>
+                <th>Gender</th>
+                <th>Stream</th>
+                <th>Subject</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1001</td>
+                <td>Jane Doe</td>
+                <td>Female</td>
+                <td>Science</td>
+                <td>Biology</td>
+                <td>Biochemistry</td>
             </tr>
             <tr>
-                <td>Akash</td>
-                <td>78</td>
-                <td>75</td>
+                <td>1002</td>
+                <td>John Smith</td>
+                <td>Male</td>
+                <td>Commerce</td>
+                <td>Economics</td>
+                <td>Macro Economics</td>
             </tr>
             <tr>
-                <td>Sunny</td>
-                <td>84</td>
-                <td>90</td>
+                <td>1003</td>
+                <td>Emily Brown</td>
+                <td>Female</td>
+                <td>Arts</td>
+                <td>History</td>
+                <td>Ancient History</td>
             </tr>
             <tr>
-                <td>Rohit</td>
-                <td>91</td>
-                <td>87</td>
+                <td>1004</td>
+                <td>Michael Johnson</td>
+                <td>Male</td>
+                <td>Engineering</td>
+                <td>Computer Science</td>
+                <td>Software Engineering</td>
             </tr>
-        </table>
-    </body>
+            <tr>
+                <td>1005</td>
+                <td>Sarah Davis</td>
+                <td>Female</td>
+                <td>Medicine</td>
+                <td>Pharmacology</td>
+                <td>Clinical Pharmacy</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
 </html>
