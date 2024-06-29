@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> Login Form </title>
+</head>
+<body>
+
+<h2> Login Form </h2>
+<form id="form_id" method="post" name="myform">
+<label>User Name :</label>
+<input type="text" name="username" id="username"/>
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+</form>
+<span><b>Note : </b>This is for demo purpose <br/><b>User Name : admin<br/>Password : admin@1234</b></span>
+<script>
+let attempt = 5; 
+function validate(){
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
+if ( username == "admin" && password == "admin@1234"){
+alert (" successfully fucked");
+
+return false;
+}
+else{
+attempt --;
+alert("You have left "+attempt+" attempt;");
+
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
+</body>
+</html>
