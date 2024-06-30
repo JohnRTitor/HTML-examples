@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter ID Validator</title>
+</head>
+<body>
+    <h3>Voter ID Validator</h3>
+    <div id="container">
+        <label for="voter-id">Enter the Voter Id Card Number: </label>
+        <input type="text" id="voter-id"/>
+        <button id="submit">Submit</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            // Get the value of the voter ID input field
+            let voterId = document.getElementById('voter-id').value;
+            // Define the voter ID validation regex pattern
+            const voterIdPattern = /^[a-zA-Z]{3}[0-9]{7}$/;
+            // Get the result div element
+            let result = document.getElementById('result');
+
+            // Check if the voter ID matches the pattern
+            if (voterIdPattern.test(voterId)) {
+                result.textContent = "The Voter ID is Valid";
+                result.style.color = "green";
+            } else {
+                result.textContent = "The Voter ID is Invalid";
+                result.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
