@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email-Validator</title>
+</head>
+
+<body>
+    <div id="container">
+        <h2>Email Validator</h2>
+        <label for="Email">Enter your Email: </label>
+        <input type="text" id="Email" />
+        <button onclick="checkValidity()">Check</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function checkValidity() {
+            // Get the value of the email input field
+            let email = document.getElementById("Email").value;
+            // Define the email validation regex pattern
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            // Get the result div element
+            let result = document.getElementById("result");
+
+            // Check if the email matches the pattern
+            if (emailPattern.test(email)) {
+                result.textContent = "The Email is Valid";
+                result.style.color = "green";
+            } else {
+                result.textContent = "The Email is Invalid";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>

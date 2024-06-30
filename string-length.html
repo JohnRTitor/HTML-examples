@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Length</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container
+        {
+            background-color: blueviolet;
+            height: 400px;
+            width: 500px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h2>String Length Calculator</h2>
+        <label for="str">Enter the string: </label>
+        <input type="text" name="input-string" id="str" oninput="stringLength()" />
+        <p id="length-display"></p>
+    </div>
+    <script>
+        function stringLength() {
+            // Get the value of the input string
+            let str = document.getElementById("str").value;
+
+            // Get the paragraph element for displaying the length
+            let lengthDisplay = document.getElementById("length-display");
+
+            // Set the inner text of the paragraph to display the length
+            lengthDisplay.innerText = `The length of the string is ${str.length}`;
+        }
+    </script>
+</body>
+
+</html>
