@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body>
+    <h1>Bubble Sort</h1>
+    <div>
+        <label for="arrayInput">Enter numbers separated by commas: </label>
+        <input type="text" id="arrayInput" placeholder="e.g., 64, 34, 25, 12, 22, 11, 90">
+    </div>
+    <button onclick="sortArray()">Sort</button>
+    <h2>Sorted Array:</h2>
+    <p id="result"></p>
+
+    <script>
+        function bubbleSort(arr) {
+            let n = arr.length;
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 1; i < n; i++) {
+                    if (arr[i - 1] > arr[i]) {
+                        // Swap the elements
+                        let temp = arr[i - 1];
+                        arr[i - 1] = arr[i];
+                        arr[i] = temp;
+                        swapped = true;
+                    }
+                }
+                n--; // Each pass through the array, the largest element will be sorted, so we can reduce the range of the array to check
+            } while (swapped);
+            return arr;
+        }
+
+        function sortArray() {
+            let input = document.querySelector("#arrayInput").value;
+            let array = input.split(',').map(Number);
+            let sortedArray = bubbleSort(array);
+            document.querySelector("#result").innerText = sortedArray.join(', ');
+        }
+    </script>
+</body>
+</html>
