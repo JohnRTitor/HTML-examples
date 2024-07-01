@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> size of String Length </title>
+  <title>Get String Length</title>
   <style>
     body{
         text-align: center;
@@ -10,16 +10,19 @@
   </style>
 </head>
 <body>
-  <h1>String Length </h1>
-  <input type="text" id="stringInput">
-  <button type="button" onclick="checkStringLength()">size check</button>
+  <h1>String Length</h1>
+  <input type="text" id="stringInput" oninput="checkStringLength()">
   <p id="stringLength"></p>
 
   <script>
     function checkStringLength() {
-      var string = document.getElementById("stringInput").value;
+      var string = document.querySelector("#stringInput").value; // Changed to querySelector
       var length = string.length;
-      document.getElementById("stringLength").innerHTML = "The lenygth of the string is " + length;
+      if(length === 0) { // Check if the input is empty
+        document.querySelector("#stringLength").innerHTML = "Please enter a string!";
+      } else {
+        document.querySelector("#stringLength").innerHTML = "The length of the string is " + length;
+      }
     }
   </script>
 </body>

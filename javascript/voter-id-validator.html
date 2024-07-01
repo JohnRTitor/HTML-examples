@@ -14,13 +14,13 @@
         <div id="result"></div>
     </div>
     <script>
-        document.getElementById('submit').addEventListener('click', function() {
-            // Get the value of the voter ID input field
-            let voterId = document.getElementById('voter-id').value;
+        document.querySelector('#submit').addEventListener('click', function() {
+            // Get the value of the voter ID input field using querySelector
+            let voterId = document.querySelector('#voter-id').value;
             // Define the voter ID validation regex pattern
             const voterIdPattern = /^[a-zA-Z]{3}[0-9]{7}$/;
-            // Get the result div element
-            let result = document.getElementById('result');
+            // Get the result div element using querySelector
+            let result = document.querySelector('#result');
 
             // Check if the voter ID matches the pattern
             if (voterIdPattern.test(voterId)) {
