@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get String Length</title>
+        <style>
+            body {
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>String Length</h1>
+        <input type="text" id="stringInput" oninput="checkStringLength()" />
+        <p id="stringLength"></p>
+
+        <script>
+        function checkStringLength() {
+            var string = document.querySelector("#stringInput").value; // Changed to querySelector
+            var length = string.length;
+            if (length === 0) {
+                // Check if the input is empty
+                document.querySelector("#stringLength").innerHTML = "Please enter a string!";
+            } else {
+                document.querySelector("#stringLength").innerHTML = "The length of the string is " + length;
+            }
+        }
+        </script>
+    </body>
+</html>
