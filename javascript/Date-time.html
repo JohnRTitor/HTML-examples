@@ -1,24 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Display  date and time</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clocks</title>
     <style>
-        body{
+        body {
+            font-family: Arial, sans-serif;
             text-align: center;
-            background-color: rgb(192, 201, 201);
+            margin-top: 50px;
+        }
+        .clock {
+            margin: 20px;
         }
     </style>
-  </head>
-  <body>
-    <h1>Current date and time:-</h1>
-    <h2><span id="datetime"></span></h2>
+</head>
+<body>
+    <h1>World Clocks</h1>
+    <div class="clock" id="local-time"></div>
+    <div class="clock" id="local-timezone"></div>
+    <div class="clock" id="gmt-time"></div>
+    <div class="clock" id="pst-time"></div>
+    <div class="clock" id="est-time"></div>
+
     <script>
-     function updateDateTime() {
-       let now = new Date();
-       let currentDateTime = now.toLocaleString();
-        document.querySelector('#datetime').textContent = currentDateTime;
-      }
-        setInterval(updateDateTime, 1000);
+        function updateTime() {
+            let localTime = new Date();
+            let localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            let gmtTime = new Date(localTime.toLocaleString('en-US', { timeZone: 'GMT' }));
+            let pstTime = new Date(localTime.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+            let estTime = new Date(localTime.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+
+            document.querySelector('#local-time').innerText = `Local Time: ${localTime.toLocaleString()}`;
+            document.querySelector('#local-timezone').innerText = `Local Timezone: ${localTimezone}`;
+            document.querySelector('#gmt-time').innerText = `GMT Time: ${gmtTime.toLocaleString()}`;
+            document.querySelector('#pst-time').innerText = `PST Time: ${pstTime.toLocaleString()}`;
+            document.querySelector('#est-time').innerText = `EST Time: ${estTime.toLocaleString()}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
     </script>
-  </body>
+</body>
 </html>
