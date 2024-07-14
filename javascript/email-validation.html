@@ -12,18 +12,18 @@
         <h2>Email Validator</h2>
         <label for="Email">Enter your Email: </label>
         <input type="text" id="Email" />
-        <button onclick="checkValidity()">Check</button>
+        <button id="btn" onclick="checkValidity()">Check</button>
         <div id="result"></div>
     </div>
     <script>
         function checkValidity() {
             // Get the value of the email input field
-            let email = document.querySelector("#Email").value;
+            let email = document.getElementById("Email").value;
             // Define the email validation regex pattern
             const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             // Get the result div element
-            let result = document.querySelector("#result");
-    
+            let result = document.getElementById("result");
+
             // Check if the email matches the pattern
             if (emailPattern.test(email)) {
                 result.textContent = "The Email is Valid";
@@ -33,6 +33,9 @@
                 result.style.color = "red";
             }
         }
+
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click",checkValidity);
     </script>
 </body>
 
